@@ -23,3 +23,36 @@ student_dict = {
 }
 
 print(student_dict["name"])
+# Access the value
+
+# Modify the value
+# Exercise 1: Modify age and technology
+
+student_dict["age"] = 24
+student_dict["technology_interest"] = "Machine Learning"
+print(student_dict)
+
+# Example 2: Adding keys and values
+student_dict["email"] = 'erwakasiisi@gmail.com'
+print(student_dict)
+
+# Excercise2: Remove a key and a value
+student_dict.pop("course")
+print(student_dict)
+
+# Example 3: Common Dictionary methods
+"""
+_summary_
+get()       // returns the value for the specified key if the key is in the dictionary, if not it 
+returns the default value
+update()    //Updates the dictionary with the elements from another dictionary
+pop()		//removes the specified key and return the corresponding value
+
+"""
+# Example 3: Use the get method to get the value
+print(student_dict.get("technology_interest"))
+
+# Exercise 3: Use the update method to update the value of age
+
+student_dict.update({"age": 25})
+print(student_dict)
