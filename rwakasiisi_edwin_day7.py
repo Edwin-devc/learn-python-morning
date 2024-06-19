@@ -122,3 +122,94 @@ vehicles = [
 
 # Call the display_vehicle_info function
 display_vehicle_info(vehicles)
+
+# Reading and Writing files in python
+"""
+1. Working with text files
+2. Handling CSV files
+3. JSON and XML file processing
+
+"""
+
+# Working with text files, open, read, write and close
+# Note: Python  provides inbuilt functions to handle text files
+# Key concepts
+"""
+-- description
+Opening File: open() function
+Reading File: read() function
+Writing File: write() function
+Close File: close() function
+
+"""
+
+# Example 3: Write a file and read a file
+# Writing to a text file
+with open('edwin.txt', 'w') as file:
+    file.write('I am Edwin and I hate Python.\n')
+    file.write('I use Python for data science.\n')
+# Reading from a text file
+with open('edwin.txt', 'r') as file:
+	content = file.read()
+	print(content)
+
+# Handling CSV files
+"""
+CSV (Comma Seperated Values) file widely for data exchange.
+Key Concepts:
+Reading CSV files: Using 'csv.reader()'
+Writing CSV: Using 'csv.writer
+DictReader and DictWriter: The class read and write CSV files as dictionaries
+
+"""
+#Example 4: Writing and Reading CSV files
+import csv
+
+# Writing to a CSV file
+with open('students.csv', 'w', newline='') as csv_file:
+	writer = csv.writer(csv_file)
+	writer.writerow(['name', 'position', 'course'])
+	writer.writerow(['Edwin', 'student', 'BSE'])
+	writer.writerow(['Arinda', 'student', 'BSE'])
+	writer.writerow(['Alvin', 'student', 'CS'])
+
+# Read from a CSV file
+with open('students.csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    for row in reader:
+        print(row)
+
+# JSON and XML file processing
+"""summary_line
+JSON (Javascript Object Notation ) and XML (eXtensible Markup Language) are formats used to
+structure date
+
+Key Concepts
+Loading JSON Data: using json.load() for reading JSON file
+Dumping JSON Data: using json.dump() for writing JSON file
+Parsing JSON Data: Using json.loads() for handling JSON strings
+
+"""
+
+#Example 6: Write and read JSON file
+import json
+
+# writing to a JSON file
+
+student_data = {
+	'name': 'Edwin',
+	'course': 'BSE',
+	'year': 'Year 2'
+}
+
+# Open the file
+with open ('student_data.json', 'w') as json_file:
+	json.dump(student_data, json_file)
+
+# Reading the JSON file
+with open('student_data.json', 'r') as json_file:
+	student_data = json.load(json_file)
+	print(student_data)
+# Exercise 2: Write and read the xml file.
+
+# Exercise 3: Using abstraction calculate the area and perimeter of a rectangle

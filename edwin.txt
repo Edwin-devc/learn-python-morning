@@ -1,0 +1,2 @@
+I am Edwin and I hate Python.
+I use Python for data science.
