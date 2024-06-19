@@ -210,6 +210,77 @@ with open ('student_data.json', 'w') as json_file:
 with open('student_data.json', 'r') as json_file:
 	student_data = json.load(json_file)
 	print(student_data)
+
+
 # Exercise 2: Write and read the xml file.
+import xml.etree.ElementTree as ET
+
+# Write an XML file
+# Create the root element
+root = ET.Element("students")
+
+# Create a student element
+student = ET.SubElement(root, "student")
+name = ET.SubElement(student, "name")
+name.text = "Edwin"
+course = ET.SubElement(student, "course")
+course.text = "BSE"
+year = ET.SubElement(student, "year")
+year.text = "Year 2"
+
+student = ET.SubElement(root, "student")
+name = ET.SubElement(student, "name")
+name.text = "Arinda"
+course = ET.SubElement(student, "course")
+course.text = "BSE"
+year = ET.SubElement(student, "year")
+year.text = "Year 2"
+
+student = ET.SubElement(root, "student")
+name = ET.SubElement(student, "name")
+name.text = "Alvin"
+course = ET.SubElement(student, "course")
+course.text = "CS"
+year = ET.SubElement(student, "year")
+year.text = "Year 1"
+
+# Convert the tree to a string and write it to a file
+tree = ET.ElementTree(root)
+with open('students.xml', "wb") as file:
+    tree.write(file, encoding="utf-8", xml_declaration=True)
+
+# reading from an XML file
+# Parse the XML file
+tree = ET.parse('students.xml')
+root = tree.getroot()
+
+# Iterate over the student elements and print them
+for student in root:
+    print(f"Name: {student.find('name').text}, Course: {student.find('course').text}, Year: {student.find('year').text}")
 
 # Exercise 3: Using abstraction calculate the area and perimeter of a rectangle
+class Shape:
+    def __init__(self):
+        pass
+
+    def calculate_area(self):
+        raise NotImplementedError
+
+    def calculate_perimeter(self):
+        raise NotImplementedError
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        super().__init__()
+        self.width = width
+        self.height = height
+
+    def calculate_area(self):
+        return self.width * self.height
+
+    def calculate_perimeter(self):
+        return 2 * (self.width + self.height)
+
+rectangle = Rectangle(5, 10)
+print(f"Area: {rectangle.calculate_area()}")
+print(f"Perimeter: {rectangle.calculate_perimeter()}")
