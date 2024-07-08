@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Moisture Reading</title>
+</head>
+<body>
+    <h1>Soil Moisture Readings</h1>
+    <ul>
+        {% for reading in readings %}
+            <li>{{ reading }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
