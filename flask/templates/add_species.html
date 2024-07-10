@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Add New Species</title>
 </head>
+
 <body>
-    <h1>Add New Species</h1>
-    <form action="{{ url_for('add_species') }}" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name">
-        <br><br>
-        <label for="habitat">Habitat:</label>
-        <input type="text" name="habitat" id="habitat">
-        <br><br>
-        <input type="submit" value="Add Species">
-    </form>
-    <a href="{{ url_for('index') }}">Back to List</a>
+    <center>
+        <h1 class="container">Add New Species</h1>
+        <form action="{{ url_for('add_species') }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <br><br>
+            <label for="habitat">Habitat:</label>
+            <input type="text" name="habitat" id="habitat">
+            <br><br>
+            <input type="submit" value="Add Species">
+        </form>
+        <a href="{{ url_for('index') }}">Back to List</a>
+    </center>
+
 </body>
+
 </html>
