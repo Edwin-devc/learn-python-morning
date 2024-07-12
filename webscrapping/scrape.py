@@ -42,7 +42,7 @@ with open(json_file, mode='w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 
 # Step 7: Save successfully to csv and json format
-print(f"Data saved successfully to {{csv_file}} and {{json_file}} format!")
+print(f"Data saved successfully to {csv_file} and {json_file} format!")
 
 
 # Exercise1: Scrape data from the http://openweathermap.org
